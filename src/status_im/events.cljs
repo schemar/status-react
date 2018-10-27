@@ -1092,3 +1092,8 @@
  :search/filter-changed
  (fn [cofx [_ search-filter]]
    (search/filter-changed cofx search-filter)))
+
+(handlers/register-handler-fx
+ :set-initial-props
+ (fn [cofx [_ initial-props]]
+   {:db (assoc (:db cofx) :initial-props initial-props)}))
